@@ -1,0 +1,20 @@
+:root{
+    --primary-color : #08463B;
+    --text-color-white : #D9D9D9;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+button:hover{
+    cursor: pointer;
+}

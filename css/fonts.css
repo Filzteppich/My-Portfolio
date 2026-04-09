@@ -1,0 +1,9 @@
+@font-face {
+    font-family: fira code;
+    src: url(./../imgs/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: karla;
+    src: url(./../imgs/fonts/Karla/Karla-VariableFont_wght.ttf);
+}

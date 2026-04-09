@@ -1,0 +1,179 @@
+
+.landing-page{
+    width: 100%;
+    height: 100vh;
+    /* background: radial-gradient(ellipse at top, #08463B 0%, rgba(86, 11, 173, 0) 60%), radial-gradient(ellipse at bottom, rgb(28, 28, 28) 30%, rgba(42, 0, 62, 0) 100%), linear-gradient(180deg, #08463B 0%, #08463B 40%, #08463B 60%, #08463B 80%, #1c1c1c 100%); */
+    /* background: linear-gradient(to right,,); */
+    background: radial-gradient(ellipse at top, #08463B 0%, rgba(86, 11, 173, 0) 60%), radial-gradient(ellipse at bottom, #1C1C1C 30%, rgba(42, 0, 62, 0) 100%), linear-gradient(180deg, #11493f 0%, #125549 40%, #08463B 60%, #041a16 80%, #0c0808 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar{
+    width: 100%;
+    height: 98px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-left{
+    display: flex;
+    min-width: 409px;
+    gap: 24px;
+    padding-left: 96px;
+    font-family: fira code;
+    color: #ffffff;
+}
+
+.navbar-left a{
+    color: #ffffff;
+}
+
+.navbar-right{
+    padding-right: 96px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+
+.job-title{
+    font-family: fira code;
+    font-size: 40px;
+    margin: 0;
+    color: var(--text-color-white);
+}
+
+.name-title{
+    font-family: karla;
+    font-size: 128px;
+    margin: 0;
+    color: var(--text-color-white);
+}
+
+.title-button-wrapper{
+    display: flex;
+    padding-top: 48px;
+    gap: 48px;
+}
+
+.title-button{
+    padding: 0 24px 0 24px;
+    font-family: karla;
+    color: var(--text-color-white);
+    border-radius: 100px;
+    border: solid 1px var(--text-color-white);
+    font-size: 18px;
+    line-height: 120%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: unset;
+}
+
+.scroll-down-container{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    bottom: 0;
+    left: 111px;
+    gap: 24px;
+    align-items: center;
+}
+
+.vertical-line{
+    height: 240px;
+    border: 1px solid #3DCFB6;
+    margin: 0;
+}
+
+
+.scroll-down-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 30px;
+    border: solid 1px #3DCFB6;
+    border-radius: 100px ;
+}
+
+.scroll-down-icon{
+    font-size: 16px;
+    color: #ffffff;
+    border: unset;
+    background-color: unset;
+    width: 100%;
+    height: 100%;
+    animation: moving-arrow 1.5s infinite;
+}
+
+@keyframes moving-arrow{
+    0%{
+        transform: translate(0px,-5px);
+    }
+    50%{
+        transform: translate(0px,5px)
+    }
+    100%{
+        transform: translate(0px,-5px);
+    }
+}
+
+.social-links-container{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    gap: 24px;
+    width: 32px;
+    right: 96px;
+    bottom: 0;
+    flex-direction: row;
+    /* rotate: -90deg;
+    transform-origin: left center; */
+    writing-mode: sideways-rl;
+}
+
+.vertical-line-social{
+    height: 186px;
+    margin: 0;
+}
+
+.mail-short{
+    transform: rotate(180deg);
+    color: #ffffff;
+    font-family: karla;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.github-short, .linkedin-short{
+    position: relative;
+}
+
+.radio-icon{
+    position: absolute;
+    right: -10px;
+    bottom: 11px;
+}
+
+.github-link{
+    background-image: url(./../imgs/icons/social-icons/GitHub.svg);
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+

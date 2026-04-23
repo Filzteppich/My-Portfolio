@@ -1,12 +1,15 @@
 :root{
     --primary-color : #08463B;
     --text-color-white : #D9D9D9;
+    --text-color-cyan : #3DCFB6;
+    --border-color-cyan : #3DCFB6;
 }
 
 body{
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
 }
 

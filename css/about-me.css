@@ -1,0 +1,82 @@
+.about-me-wrapper{
+    height: 100vh;
+    max-height: 1080px;
+    width: 100%;
+    background-color: #1C1C1C;
+    display: flex;
+    justify-content: center;
+}
+
+.about-me-wrap{
+    width: 1232px;
+    height: 708px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 144px;
+    gap: 96px;
+}
+
+.user-image{
+    width: 568px;
+    height: 568px;
+    border-radius: 30px;
+    background-color: #270505;
+}
+
+.about-me-content{
+    width: 568px;
+    height: 588px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 98px;
+}
+
+.about-me-title{
+    font-family: karla;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color-cyan);
+}
+
+.about-me-text-wrapper{
+    width: 100%;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 32px;
+    background-color: #3DCFB61A;
+    border-radius: 30px;
+    border: solid 1px var(--border-color-cyan);
+    backdrop-filter: blur(4px)
+}
+
+.about-me-text-title{
+    font-family: Fira Code;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -3%;
+    color: var(--text-color-cyan);
+}
+
+.about-me-text{
+    font-family: karla;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: justify;
+    color: var(--text-color-white);
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-text-wrap{
+    display: flex;
+    gap: 16px;
+}

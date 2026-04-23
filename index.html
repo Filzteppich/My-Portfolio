@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./css/landingpage.css" />
+    <link rel="stylesheet" href="./css/about-me.css" />
+    <link rel="stylesheet" href="./css/skills.css" />
     <link rel="stylesheet" href="./css/fonts.css" />
     <script src="./script.js"></script>
+    <script src="./js/skills.js"></script>
     <title>Portfolio</title>
   </head>
   <body onload="init()">
@@ -40,11 +43,182 @@
 
           <div class="social-links-container">
             <div class="mail-short"><span>khang_136@yahoo.de</span></div>
-            <div class="github-short"><a href="" class="social-link"><img class="github-icon" src="./imgs/icons/social-icons/GitHub.svg" alt=""><img class="radio-icon" src="./imgs/icons/social-icons/radio-button.svg" alt=""></a></div>
-            <div class="linkedin-short"><a href="#" class="social-link"><img src="./imgs/icons/social-icons/Linkedin.svg" alt=""></a><img class="radio-icon" src="./imgs/icons/social-icons/radio-button.svg" alt=""></div>
+            <div class="github-short" onmouseout="resetIcon()" onmouseover="changeIcon()"><a href="" class="social-link"><img id="githubIcon" class="github-icon" src="./assets/icons/social-icons/GitHub.svg" alt=""><img id="radioIcon" class="radio-icon" src="./assets/icons/social-icons/radio-button.svg" alt=""></a></div>
             <div class="vertical-line-social"> <hr> </div>
           </div>
         </div>
+      </div>
+      <div class="about-me-wrapper">
+        <div class="about-me-wrap">
+          <div class="user-image">
+
+          </div>
+          <div class="about-me-content">
+            <div class="about-me-title">
+              Who am i
+            </div>
+            <div class="about-me-text-wrapper">
+              <div class="about-me-text-title">
+                About me
+              </div>
+              <div class="about-me-text">
+                <div>
+                  <span>Hallo, ich bin Khang. <br> 
+                  Was mich am Frontend-Development begeistert, ist die perfekte Mischung aus Logik, Kreativität und Problemlösung. Die Welt des Codings ist für mich grenzenlos, und genau das motiviert mich jeden Tag aufs Neue: Man lernt niemals aus – und das macht diese Reise so spannend.
+                  Ich will wachsen, besser werden und sehen, zu was ich alles fähig bin.</span>
+                </div>
+                <div class="sub-text-wrap">
+                  <div class="sub-icon">
+                    <img src="./assets/icons/icons/location_on.svg" alt="">
+                  </div>
+                  <div class="sub-text">
+                          <span>Ich lebe in Göttingen, Deutschland, und möchte am liebsten Teil eines Teams sein, mit dem persönlicher Austausch möglich ist und von dem ich lernen kann. Remote-Arbeit ist für mich ebenfalls denkbar, aber die direkte Zusammenarbeit vor Ort hat für mich einen besonderen Wert.</span>
+                  </div>
+                </div>
+                <div class="sub-text-wrap">
+                  <div class="sub-icon">
+                    <img src="./assets/icons/icons/cognition.svg" alt="">
+                  </div>              
+                  <div class="sub-text">
+                    Technologien entwickeln sich ständig weiter – und ich liebe es, mit ihnen zu wachsen. HTML, CSS und JavaScript bilden aktuell meinen Schwerpunkt. Vor allem JavaScript fasziniert mich: komplex, herausfordernd und voller Möglichkeiten. Genau diese Mischung hält meine Neugier wach und motiviert mich, meine Fähigkeiten kontinuierlich zu erweitern.
+                  </div>
+                </div>
+                <div class="sub-text-wrap">
+                  <div class="sub-icon">
+                    <img src="./assets/icons/icons/new_releases.svg" alt="">
+                  </div>
+                  <div class="sub-text">
+                    Ich arbeite analytisch, kreativ und strukturiert. Klarer, effizienter und gut verständlicher Code ist mir wichtig – nicht nur damit Dinge funktionieren, sondern damit Teams gemeinsam darauf aufbauen können. Jedes Projekt ist für mich eine Chance, eine elegante Lösung zu finden und mich weiterzuentwickeln.
+                  </div>
+                </div>
+              
+
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="skills-wrapper">
+        <div class="skills-wrap">
+            <div class="skills-category-title">
+              Technologies
+            </div>
+            <div class="skills-content">
+              <div class="skills-text">
+                <div class="skills-text-title">
+                  Skill Set
+                </div>
+                <div class="skills-text-content">
+                  <span
+        >Als Frontend Developer arbeite ich mit modernen Webtechnologien, um
+        benutzerfreundliche und performante Anwendungen zu gestalten. Meine
+        Schwerpunkte liegen dabei auf HTML, CSS/SCSS, JavaScript, TypeScript und
+        Angular, mit denen ich sowohl kleinere Features als auch komplexere
+        Anwendungen erfolgreich umgesetzt habe. In meinen Projekten habe ich
+        Firebase eingesetzt, um Funktionen wie Authentifizierung oder
+        Datenverwaltung bereitzustellen und vollständige Webanwendungen zu
+        realisieren. Außerdem nutze ich Git täglich, sei es zur sauberen
+        Versionsverwaltung oder zur strukturierten Zusammenarbeit im Team –
+        besonders beim Branch-Management habe ich wertvolle Erfahrungen
+        gesammelt. Ich liebe es, neue Technologien zu entdecken, Best Practices
+        anzuwenden und mich kontinuierlich weiterzuentwickeln, um moderne und
+        hochwertige Weblösungen zu schaffen.</span>
+                </div>
+                <div class="skills-request">
+                  <p>You need another skill?</p>
+                  <p>feel free to contact me</p>
+                </div>
+              </div>
+              <div class="skills-icon-wrapper" id="skillsIconWrapper">
+                <div class="skills-icon-wrap" >
+                  <div class="skill-icon">
+                    <img src="./assets/icons/skill-icons/html-logo.webp" alt="">
+                  </div>
+                  <div class="skill-name">
+                    HTML
+                  </div>
+                </div>
+                <div class="skills-icon-wrap" id="skills-icon-wrap">
+                  <div class="skill-icon">
+                    <img src="./assets/icons/skill-icons/css-logo.png" alt="">
+                  </div>
+                  <div class="skill-name">
+                    CSS
+                  </div>
+                </div>
+                <div class="skills-icon-wrap" id="skills-icon-wrap">
+                  <div class="skill-icon">
+                    <img src="./assets/icons/skill-icons/javascript-logo.png" alt="">
+                  </div>
+                  <div class="skill-name">
+                    JavaScript
+                  </div>
+                </div>
+                <div class="skills-icon-wrap" id="skills-icon-wrap">
+                  <div class="skill-icon">
+                    <img src="./assets/icons/skill-icons/typescript-logo.png" alt="">
+                  </div>
+                  <div class="skill-name">
+                    TypeScript
+                  </div>
+                </div>
+                <div class="skills-icon-wrap" id="skills-icon-wrap">
+                  <div class="skill-icon">
+                    <img src="./assets/icons/skill-icons/angular-logo.png" alt="">
+                  </div>
+                  <div class="skill-name">
+                    Angular
+                  </div>
+                </div>
+                <div class="skills-icon-wrap" id="skills-icon-wrap">
+                  <div class="skill-icon">
+                    <img src="./assets/icons/skill-icons/firebase-logo.png" alt="">
+                  </div>
+                  <div class="skill-name">
+                    Firebase
+                  </div>
+                </div>
+                <div class="skills-icon-wrap" id="skills-icon-wrap">
+                  <div class="skill-icon">
+                    <img src="./assets/icons/skill-icons/git-icon.svg.png" alt="">
+                  </div>
+                  <div class="skill-name">
+                    Git
+                  </div>
+                </div>
+                <div class="skills-icon-wrap" id="skills-icon-wrap">
+                  <div class="skill-icon">
+                    <img src="./assets/icons/skill-icons/api.png" alt="">
+                  </div>
+                  <div class="skill-name">
+                    API
+                  </div>
+                </div>
+                <div class="skills-icon-wrap" id="skills-icon-wrap">
+                  <div class="skill-icon">
+                    <img src="./assets/icons/skill-icons/materialDesign.svg" alt="">
+                  </div>
+                  <div class="skill-name">
+                    Material Design
+                  </div>
+                </div>
+                <div class="skills-icon-wrap" id="skills-icon-wrap">
+                  <div class="skill-icon">
+                    <img src="./assets/icons/skill-icons/growth-icon.png" alt="">
+                  </div>
+                  <div class="skill-name">
+                    Continually learning
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+
       </div>
 
 

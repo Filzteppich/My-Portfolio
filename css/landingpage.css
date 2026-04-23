@@ -158,7 +158,12 @@
     font-weight: 400;
 }
 
-.github-short, .linkedin-short{
+.mail-short:hover{
+    color: #3DCFB6;
+    cursor: pointer;
+}
+
+.github-short{
     position: relative;
 }
 
@@ -166,6 +171,7 @@
     position: absolute;
     right: -10px;
     bottom: 11px;
+    display: none;
 }
 
 .github-link{
@@ -174,6 +180,5 @@
     height: 32px;
     background-size: contain;
     background-repeat: no-repeat;
-
 }
 

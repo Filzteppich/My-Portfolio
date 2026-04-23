@@ -1,0 +1,113 @@
+.skills-wrapper{
+    height: 695px;
+    width: 100%;
+    background: radial-gradient(19.43% 43.85% at 5.22% 52.45%, rgb(8 70 59 / 96%) 0%, #1C1C1C 100%);
+    padding-top: 144px;
+    display: flex;
+    justify-content: center;
+}
+
+.skills-wrap{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.skills-content{
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    gap: 96px;
+}
+
+.skills-text{
+    width: 520px;
+height: 503px;
+opacity: 1;
+gap: 40px;
+border-radius: 30px;
+border-width: 1px;
+padding: 32px;
+border: solid 1px var(--border-color-cyan);
+background: #3DCFB61A;
+display: flex;
+flex-direction: column;
+
+}
+
+.skills-category-title{
+font-family: Karla;
+font-weight: 700;
+font-style: Bold;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: 0%;
+color: var(--text-color-cyan);
+}
+
+.skills-text-title{
+    font-family: Fira Code;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -3%;
+    color: var(--text-color-cyan);
+}
+
+.skills-text-content{
+font-family: Karla;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+line-height: 120%;
+letter-spacing: 0%;
+text-align: justify;
+color: var(--text-color-white)
+}
+
+.skills-icon-wrapper{
+    width: 632px;
+    height: 428px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 72px;
+}
+
+.skills-icon-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 104px;
+    height: 116px;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.skill-icon img{
+    width: 64px;
+    height: 64px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.skills-icon-wrap:hover .skill-icon img{
+    transform: scale(1.2) rotate(-5deg) translateY(-10px);
+    filter: unset;
+}
+
+.skills-icon-wrap:hover .skill-name{
+    color: var(--text-color-cyan);
+}
+
+.skill-name{
+font-family: Fira Code;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+line-height: 120%;
+letter-spacing: -3%;
+text-align: center;
+color: #ffffff;
+transition: color 0.3s ease-in-out;
+}

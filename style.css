@@ -1,8 +1,10 @@
 :root{
     --primary-color : #08463B;
-    --text-color-white : #D9D9D9;
+    --landingpage-text-color-white : #D9D9D9;
+    --text-color-white : #FFFFFF;
     --text-color-cyan : #3DCFB6;
     --border-color-cyan : #3DCFB6;
+    --font-size-box-title : 64px;
 }
 
 body{

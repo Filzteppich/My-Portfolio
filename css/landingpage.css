@@ -50,14 +50,14 @@
     font-family: fira code;
     font-size: 40px;
     margin: 0;
-    color: var(--text-color-white);
+    color: var(--landingpage-text-color-white);
 }
 
 .name-title{
     font-family: karla;
     font-size: 128px;
     margin: 0;
-    color: var(--text-color-white);
+    color: var(--landingpage-text-color-white);
 }
 
 .title-button-wrapper{

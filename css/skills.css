@@ -32,7 +32,6 @@ border: solid 1px var(--border-color-cyan);
 background: #3DCFB61A;
 display: flex;
 flex-direction: column;
-
 }
 
 .skills-category-title{
@@ -65,6 +64,7 @@ letter-spacing: 0%;
 text-align: justify;
 color: var(--text-color-white)
 }
+
 
 .skills-icon-wrapper{
     width: 632px;

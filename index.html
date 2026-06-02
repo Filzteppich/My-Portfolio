@@ -9,49 +9,57 @@
     <link rel="stylesheet" href="./css/skills.css" />
     <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/projects.css" />
+    <link rel="stylesheet" href="./css/feedback.css" />
     
     <script src="./script.js"></script>
-    <script src="./js/skills.js"></script>
+    <script src="./scripts/feedback.js"></script>
+
     <title>Portfolio</title>
   </head>
   <body onload="init()">
-      <div class="landing-page">
-        <div class="navbar">
-            <div class="navbar-left">
-              <div class="language">EN / DE</div>
-              <a href="#">About me</a>
-              <a href="#">Skills</a>
-              <a href="#">Projects</a>
-            </div>
-          <div class="navbar-right">Logo</div>
-        </div>
-        <div class="content">
-          <div class="title-section">
-            <p class="job-title">Frontend Developer</p>
-            <br />
-            <p class="name-title">Khang Duong</p>
-          </div>
-          <div class="title-button-wrapper">
-            <button class="title-button">Check my Work</button>
-            <button class="title-button">Contact me</button>
-          </div>
-          <div class="scroll-down-container">
+      <section class="landing-page">
+        <div class="landing-page-wrap">
 
-            <div class="scroll-down-wrapper">
-              <button class="scroll-down-icon">&#8595</button>
+          <div class="navbar">
+              <div class="navbar-left">
+                <div class="language">EN / DE</div>
+                <a href="#">About me</a>
+                <a href="#">Skills</a>
+                <a href="#">Projects</a>
+              </div>
+            <div class="navbar-right">Logo</div>
+          </div>
+          <div class="content">
+            <div class="title-section">
+              <p class="job-title">Frontend Developer</p>
+              <br />
+              <p class="name-title">Khang Duong</p>
             </div>
-            <hr class="vertical-line">
+            <div class="title-button-wrapper">
+              <button class="title-button">Check my Work</button>
+              <button class="title-button">Contact me</button>
+            </div>
+            <div class="scroll-down-container">
+  
+              <div class="scroll-down-wrapper">
+                <button class="scroll-down-icon">&#8595</button>
+              </div>
+              <hr class="vertical-line">
+            </div>
+  
+            <div class="social-links-container">
+              <div class="mail-short"><span>khang_136@yahoo.de</span></div>
+              <div class="github-short" onmouseout="resetIcon()" onmouseover="changeIcon()"><a href="" class="social-link">
+                <img id="githubIcon" class="github-icon" src="./assets/icons/social-icons/GitHub.svg" alt="">
+                <img id="radioIcon" class="radio-icon" src="./assets/icons/social-icons/radio-button.svg" alt=""></a></div>
+              <div class="vertical-line-social"> <hr> </div>
+            </div>
           </div>
 
-          <div class="social-links-container">
-            <div class="mail-short"><span>khang_136@yahoo.de</span></div>
-            <div class="github-short" onmouseout="resetIcon()" onmouseover="changeIcon()"><a href="" class="social-link"><img id="githubIcon" class="github-icon" src="./assets/icons/social-icons/GitHub.svg" alt=""><img id="radioIcon" class="radio-icon" src="./assets/icons/social-icons/radio-button.svg" alt=""></a></div>
-            <div class="vertical-line-social"> <hr> </div>
-          </div>
         </div>
-      </div>
-      <div class="about-me-wrapper">
-        <div class="about-me-wrap">
+      </section>
+      <section class="about-me-wrapper">
+        <div class="about-me-wrap wrap">
           <div class="user-image">
 
           </div>
@@ -63,36 +71,42 @@
               <div class="about-me-text-title">
                 About me
               </div>
-              <div class="about-me-text">
+<div class="about-me-text">
                 <div>
                   <span>Hallo, ich bin Khang. <br> 
                   Was mich am Frontend-Development begeistert, ist die perfekte Mischung aus Logik, Kreativität und Problemlösung. Die Welt des Codings ist für mich grenzenlos, und genau das motiviert mich jeden Tag aufs Neue: Man lernt niemals aus – und das macht diese Reise so spannend.
                   Ich will wachsen, besser werden und sehen, zu was ich alles fähig bin.</span>
                 </div>
-                <div class="sub-text-wrap">
-                  <div class="sub-icon">
-                    <img src="./assets/icons/icons/location_on.svg" alt="">
-                  </div>
-                  <div class="sub-text">
-                          <span>Ich lebe in Göttingen, Deutschland, und möchte am liebsten Teil eines Teams sein, mit dem persönlicher Austausch möglich ist und von dem ich lernen kann. Remote-Arbeit ist für mich ebenfalls denkbar, aber die direkte Zusammenarbeit vor Ort hat für mich einen besonderen Wert.</span>
-                  </div>
-                </div>
-                <div class="sub-text-wrap">
-                  <div class="sub-icon">
-                    <img src="./assets/icons/icons/cognition.svg" alt="">
-                  </div>              
-                  <div class="sub-text">
-                    Technologien entwickeln sich ständig weiter – und ich liebe es, mit ihnen zu wachsen. HTML, CSS und JavaScript bilden aktuell meinen Schwerpunkt. Vor allem JavaScript fasziniert mich: komplex, herausfordernd und voller Möglichkeiten. Genau diese Mischung hält meine Neugier wach und motiviert mich, meine Fähigkeiten kontinuierlich zu erweitern.
-                  </div>
-                </div>
-                <div class="sub-text-wrap">
-                  <div class="sub-icon">
-                    <img src="./assets/icons/icons/new_releases.svg" alt="">
-                  </div>
-                  <div class="sub-text">
-                    Ich arbeite analytisch, kreativ und strukturiert. Klarer, effizienter und gut verständlicher Code ist mir wichtig – nicht nur damit Dinge funktionieren, sondern damit Teams gemeinsam darauf aufbauen können. Jedes Projekt ist für mich eine Chance, eine elegante Lösung zu finden und mich weiterzuentwickeln.
-                  </div>
-                </div>
+
+  <div class="sub-text-wrap">
+    <div class="sub-icon">
+      <img src="./assets/icons/icons/location_on.svg" alt="">
+    </div>
+    <div class="sub-text">
+      <span>
+        Ich lebe in Göttingen, Deutschland, und schätze den persönlichen Austausch im Team. Remote-Arbeit ist für mich ebenfalls möglich.
+      </span>
+    </div>
+  </div>
+
+  <div class="sub-text-wrap">
+    <div class="sub-icon">
+      <img src="./assets/icons/icons/cognition.svg" alt="">
+    </div>              
+    <div class="sub-text">
+      HTML, CSS und JavaScript sind aktuell mein Schwerpunkt. Besonders JavaScript fasziniert mich durch seine Vielseitigkeit und Herausforderungen.
+    </div>
+  </div>
+
+  <div class="sub-text-wrap">
+    <div class="sub-icon">
+      <img src="./assets/icons/icons/new_releases.svg" alt="">
+    </div>
+    <div class="sub-text">
+      Ich arbeite analytisch, kreativ und strukturiert. Klarer und verständlicher Code ist mir wichtig, damit Teams effizient zusammenarbeiten können.
+    </div>
+  </div>
+</div>
               
 
                 
@@ -101,10 +115,10 @@
           </div>
 
         </div>
-      </div>
+      </section>
 
-      <div class="skills-wrapper">
-        <div class="skills-wrap">
+      <section class="skills-wrapper">
+        <div class="skills-wrap wrap">
             <div class="skills-category-title">
               Technologies
             </div>
@@ -211,58 +225,111 @@
               </div>
             </div>
         </div>
-      </div>
+      </section>
 
-      <div class="projects-wrapper">
-        <div class="projects-wrap">
-          <div class="portfolio-title">
-            <div class="small-title">
-              <span>Portfolio</span>
+      <section class="projects-wrapper">
+        <div class="projects-wrap wrap">
+          <div class="projects-container">
+
+            <div class="portfolio-title">
+              <div class="small-title">
+                <span>Portfolio</span>
+              </div>
+              <div class="large-title">
+                Featured Projects
+              </div>
             </div>
-            <div class="large-title">
-              Featured Projects
+            <div class="portfolio-description">
+              Explore a selection of my work here - Interact with projects to see my skills in action.
+            </div>
+            <div class="projects-list-container">
+              <div class="projects-list">
+           <div class="project-item">
+                <div class="project-name">
+                  Join
+                </div>
+                <div class="project-language">
+                  Angular | TypeScript | HTML| CSS | Firebase 
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-name">
+                  El Pollo Loco
+                </div>
+                <div class="project-language">
+                  HTML | CSS | JavaScript  
+                </div>
+              </div>
+              
+              <div class="project-item">
+                <div class="project-name">
+                  DA Bubble
+                </div>
+                <div class="project-language">
+                  Angular | Firebase | Typescript  
+                </div>
+              </div>
+            </div>
+            <div class="project-preview-wrapper">
+              <div class="project-preview">
+    
+                
+              </div>
+            </div>
+
+            </div>
+
+          </div>
+          
+
+
+        </div>
+      </section>
+
+      <section class="feedback-wrapper">
+        <div class="feedback-wrap wrap">
+          <div class="feedback-title">
+            <span>What my colleagues say about me</span>
+          </div>
+
+          <div class="feedback-list" id="feedbackCard">
+            <div class="feedback-card" >
+            <div class="feedback-content" >
+                <div class="feedback-text">
+                  <span> es lief alles super gut, keine probleme</span>
+                </div>
+                <div class="feedback-author">
+                  <div class="feedback-horizontal-line">
+                    <hr>
+                  </div>
+                  <div class="feedback-author-name">Khang Duong - Team Leader</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="portfolio-description">
-            Explore a selection of my work here - Interact with projects to see my skills in action.
-          </div>
-          <div class="projects-list">
-
-            <div class="single-project-wrap">
-              <div class="project-name">
-                Join
-              </div>
-              <div class="project-language">
-                Angular | TypeScript | HTML| CSS | Firebase 
-              </div>
+          <div class="feedback-button-container">
+            <div class="previous-arrow">
+              <img src="./assets/icons/arrow-buttons/24. Arrow - references.svg" alt="">
             </div>
-            
-            <div class="single-project-wrap">
-              <div class="project-name">
-                El Pollo Loco
-              </div>
-              <div class="project-language">
-                HTML | CSS | JavaScript  
-              </div>
+            <div class="radio-button">
+              <img src="./assets/icons/arrow-buttons/Ellipse 3.svg" alt="">
             </div>
-            <div class="single-project-wrap">
-              <div class="project-name">
-                DA Bubble
-              </div>
-              <div class="project-language">
-                Angular | Firebase | Typescript  
-              </div>
+            <div class="radio-button">
+              <img src="./assets/icons/arrow-buttons/Ellipse 3.svg" alt="">
+            </div>
+            <div class="radio-button">
+              <img src="./assets/icons/arrow-buttons/Ellipse 3.svg" alt="">
+            </div>
+            <div class="next-arrow">
+              <img src="./assets/icons/arrow-buttons/arrow_forward.svg" alt="">
             </div>
           </div>
 
         </div>
-        <div class="project-screenshot-wrapper">
-          <div class="project-screenshot">
+      </section>
 
-            
-          </div>
-        </div>
-      </div>
+      
 
       
 

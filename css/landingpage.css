@@ -6,6 +6,13 @@
     /* background: linear-gradient(to right,,); */
     background: radial-gradient(ellipse at top, #08463B 0%, rgba(86, 11, 173, 0) 60%), radial-gradient(ellipse at bottom, #1C1C1C 30%, rgba(42, 0, 62, 0) 100%), linear-gradient(180deg, #11493f 0%, #125549 40%, #08463B 60%, #041a16 80%, #0c0808 100%);
     display: flex;
+    justify-content: center;
+}
+
+.landing-page-wrap{
+     max-width: 1980px;
+    width: 100%;
+    display: flex;
     flex-direction: column;
 }
 
@@ -175,7 +182,7 @@
 }
 
 .github-link{
-    background-image: url(./../imgs/icons/social-icons/GitHub.svg);
+    background-image: url(./../assets/icons/social-icons/GitHub.svg);
     width: 32px;
     height: 32px;
     background-size: contain;

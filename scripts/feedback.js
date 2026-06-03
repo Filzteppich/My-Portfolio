@@ -17,47 +17,83 @@
     }
   ]
 
-  showFeedbacks();
-   document.addEventListener('DOMContentLoaded', showFeedbacks);
+  const feedbackTrackOffsets = [-2, -1, 0, 1, 2];
+  const feedbackTransitionDuration = 350;
+  const feedbackState = {
+    activeIndex: 0,
+    isAnimating: false
+  };
 
+  let feedbackRef;
+  let dotsRef;
 
-  // function showFeedbacks(){
-  //   let feedbackRef = document.getElementById('feedbackCard');
-  //   let feedbackContainer = feedbacks.forEach((feedback) => {
-  //     console.log(feedback);
-      
-  //   feedbackRef.innerHTML += `
-  //             <div class="feedback-card" >
-  //             <div class="feedback-text">
-  //               <span> ${feedback.commentDe} </span>
-  //             </div>
-  //             <div class="feedback-author">
-  //               <div class="feedback-horizontal-line">
-  //                 <hr>
-  //               </div>
-  //               <div class="feedback-author-name">Khang Duong - Team Leader</div>
-  //             </div>
-  //           </div>
-  //   `
-  //   })
+  document.addEventListener('DOMContentLoaded', initFeedbackSlider);
 
-  // }
+  function initFeedbackSlider() {
+    feedbackRef = document.getElementById('feedbackCard');
+    dotsRef = document.getElementById('feedbackDots');
 
- 
-
-  function showFeedbacks() {
-    const feedbackRef = document.getElementById('feedbackCard');
-
-    if (!feedbackRef) {
+    if (!feedbackRef || !dotsRef || feedbacks.length === 0) {
       return;
     }
 
-    feedbackRef.innerHTML = '';
+    document.getElementById('feedbackPrevious')?.addEventListener('click', () => updateActiveFeedback(feedbackState.activeIndex - 1));
+    document.getElementById('feedbackNext')?.addEventListener('click', () => updateActiveFeedback(feedbackState.activeIndex + 1));
+    window.addEventListener('resize', () => {
+      if (!feedbackState.isAnimating) {
+        positionFeedbackTrack(2);
+      }
+    });
 
-    feedbacks.forEach((feedback) => {
-      feedbackRef.innerHTML += `
-        <div class="feedback-card">
-        <div class="feedback-content" >
+    renderFeedbackSlider();
+  }
+
+  function updateActiveFeedback(nextIndex) {
+    const targetIndex = getLoopedIndex(nextIndex);
+
+    if (feedbackState.isAnimating || targetIndex === feedbackState.activeIndex) {
+      return;
+    }
+
+    const slidePlan = getSlidePlan(targetIndex);
+    feedbackState.isAnimating = true;
+    animateFeedbackJump(slidePlan, targetIndex);
+  }
+
+  function renderFeedbackSlider() {
+    renderFeedbackTrack(feedbackTrackOffsets, 2);
+
+    dotsRef.innerHTML = feedbacks.map((feedback, index) => `
+      <button
+        class="radio-button${index === feedbackState.activeIndex ? ' is-active' : ''}"
+        type="button"
+        aria-label="Show feedback from ${feedback.name}"
+        aria-pressed="${index === feedbackState.activeIndex}"
+        data-feedback-index="${index}"
+      ></button>
+    `).join('');
+
+    dotsRef.querySelectorAll('[data-feedback-index]').forEach((button) => {
+      button.addEventListener('click', () => updateActiveFeedback(Number(button.dataset.feedbackIndex)));
+    });
+
+    positionFeedbackTrack(2);
+  }
+
+  function renderFeedbackTrack(offsets, focusSlot) {
+    feedbackRef.innerHTML = `
+      <div class="feedback-track">
+        ${offsets.map((offset, slotIndex) => createFeedbackCard(offset, slotIndex, focusSlot)).join('')}
+      </div>
+    `;
+  }
+
+  function createFeedbackCard(offset, slotIndex, focusSlot) {
+    const feedback = feedbacks[getLoopedIndex(feedbackState.activeIndex + offset)];
+
+    return `
+      <article class="feedback-card ${getFeedbackCardPosition(slotIndex, focusSlot)}" data-feedback-slot="${slotIndex}">
+        <div class="feedback-content">
           <div class="feedback-text">
             <span>${feedback.commentDe}</span>
           </div>
@@ -68,7 +104,108 @@
             <div class="feedback-author-name">${feedback.name} - ${feedback.relation}</div>
           </div>
         </div>
-        </div>
-      `;
+      </article>
+    `;
+  }
+
+  function positionFeedbackTrack(targetSlot, shouldAnimate = false, duration = feedbackTransitionDuration) {
+    const track = feedbackRef.querySelector('.feedback-track');
+    const targetCard = track?.querySelector(`[data-feedback-slot="${targetSlot}"]`);
+
+    if (!track || !targetCard) {
+      return;
+    }
+
+    const targetOffset = (feedbackRef.clientWidth / 2) - (targetCard.offsetLeft + targetCard.offsetWidth / 2);
+    track.style.transition = shouldAnimate ? `transform ${duration}ms ease` : 'none';
+    track.style.transform = `translateX(${targetOffset}px)`;
+  }
+
+  function animateFeedbackJump(slidePlan, targetIndex) {
+    const animationOffsets = getAnimationOffsets(slidePlan.direction, slidePlan.steps);
+    const startSlot = slidePlan.direction === 'next' ? 2 : slidePlan.steps + 2;
+    const targetSlot = slidePlan.direction === 'next' ? slidePlan.steps + 2 : 2;
+    const animationDuration = getAnimationDuration(slidePlan.steps);
+
+    renderFeedbackTrack(animationOffsets, targetSlot);
+    positionFeedbackTrack(startSlot);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        positionFeedbackTrack(targetSlot, true, animationDuration);
+      });
     });
+
+    window.setTimeout(() => {
+      feedbackState.activeIndex = targetIndex;
+      renderFeedbackSlider();
+      feedbackState.isAnimating = false;
+    }, animationDuration);
+  }
+
+  function getAnimationOffsets(direction, steps) {
+    const startOffset = direction === 'next' ? -2 : -(steps + 2);
+    const endOffset = direction === 'next' ? steps + 2 : 2;
+
+    return Array.from({ length: endOffset - startOffset + 1 }, (_, index) => startOffset + index);
+  }
+
+  function getAnimationDuration(steps) {
+    return feedbackTransitionDuration * steps;
+  }
+
+  function getSlidePlan(nextIndex) {
+    const lastIndex = feedbacks.length - 1;
+
+    if (feedbackState.activeIndex === 0 && nextIndex === lastIndex) {
+      return {
+        direction: 'next',
+        steps: feedbacks.length - 1
+      };
+    }
+
+    if (feedbackState.activeIndex === lastIndex && nextIndex === 0) {
+      return {
+        direction: 'previous',
+        steps: feedbacks.length - 1
+      };
+    }
+
+    if (nextIndex > feedbackState.activeIndex) {
+      return {
+        direction: 'next',
+        steps: nextIndex - feedbackState.activeIndex
+      };
+    }
+
+    return {
+      direction: 'previous',
+      steps: feedbackState.activeIndex - nextIndex
+    };
+  }
+
+  function getLoopedIndex(index) {
+    return (index + feedbacks.length) % feedbacks.length;
+  }
+
+  function getFeedbackCardPosition(slotIndex, focusSlot) {
+    const distance = slotIndex - focusSlot;
+
+    if (distance <= -2) {
+      return 'feedback-card-far-left';
+    }
+
+    if (distance === -1) {
+      return 'feedback-card-left';
+    }
+
+    if (distance === 0) {
+      return 'feedback-card-center';
+    }
+
+    if (distance === 1) {
+      return 'feedback-card-right';
+    }
+
+    return 'feedback-card-far-right';
   }

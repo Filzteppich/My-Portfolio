@@ -293,37 +293,15 @@
             <span>What my colleagues say about me</span>
           </div>
 
-          <div class="feedback-list" id="feedbackCard">
-            <div class="feedback-card" >
-            <div class="feedback-content" >
-                <div class="feedback-text">
-                  <span> es lief alles super gut, keine probleme</span>
-                </div>
-                <div class="feedback-author">
-                  <div class="feedback-horizontal-line">
-                    <hr>
-                  </div>
-                  <div class="feedback-author-name">Khang Duong - Team Leader</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="feedback-list" id="feedbackCard"></div>
           <div class="feedback-button-container">
-            <div class="previous-arrow">
+            <button class="feedback-control previous-arrow" id="feedbackPrevious" type="button" aria-label="Show previous feedback">
               <img src="./assets/icons/arrow-buttons/24. Arrow - references.svg" alt="">
-            </div>
-            <div class="radio-button">
-              <img src="./assets/icons/arrow-buttons/Ellipse 3.svg" alt="">
-            </div>
-            <div class="radio-button">
-              <img src="./assets/icons/arrow-buttons/Ellipse 3.svg" alt="">
-            </div>
-            <div class="radio-button">
-              <img src="./assets/icons/arrow-buttons/Ellipse 3.svg" alt="">
-            </div>
-            <div class="next-arrow">
+            </button>
+            <div class="feedback-radio-group" id="feedbackDots" aria-label="Select feedback"></div>
+            <button class="feedback-control next-arrow" id="feedbackNext" type="button" aria-label="Show next feedback">
               <img src="./assets/icons/arrow-buttons/arrow_forward.svg" alt="">
-            </div>
+            </button>
           </div>
 
         </div>

@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/projects.css" />
     <link rel="stylesheet" href="./css/feedback.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
     
     <script src="./script.js"></script>
     <script src="./scripts/feedback.js"></script>
+    <script src="./scripts/templates.js"></script>
+    <script src="./scripts/contact.js"></script>
 
     <title>Portfolio</title>
   </head>
@@ -295,15 +298,68 @@
 
           <div class="feedback-list" id="feedbackCard"></div>
           <div class="feedback-button-container">
-            <button class="feedback-control previous-arrow" id="feedbackPrevious" type="button" aria-label="Show previous feedback">
+            <button class="feedback-control previous-arrow" id="feedbackPrevious" type="button" aria-label="Show previous feedback" onclick="showPreviousFeedback()">
               <img src="./assets/icons/arrow-buttons/24. Arrow - references.svg" alt="">
             </button>
             <div class="feedback-radio-group" id="feedbackDots" aria-label="Select feedback"></div>
-            <button class="feedback-control next-arrow" id="feedbackNext" type="button" aria-label="Show next feedback">
+            <button class="feedback-control next-arrow" id="feedbackNext" type="button" aria-label="Show next feedback" onclick="showNextFeedback()">
               <img src="./assets/icons/arrow-buttons/arrow_forward.svg" alt="">
             </button>
           </div>
 
+        </div>
+      </section>
+
+      <section class="contact-wrapper">
+        <div class="contact-wrap wrap">
+        <div class="contact-text-container">
+          <div class="contact-title">
+            <div class="contact-kicker">
+              <span>Contact me</span>
+            </div>
+            <div class="contact-headline">
+              <span>Let's work <br> together</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="contact-form-container">
+          
+            <div class="input-fields">
+              <div class="name-area">
+                <div class="name-text">
+                  <span>What's your name?</span>
+                </div>
+                <div class="name-input-field">
+                  <input type="text" placeholder="Your name goes here">
+                </div>
+              </div>
+              <div class="mail-area">
+                <div class="mail-text">
+                  <span>What's your email?</span>
+                </div>
+                <div class="mail-input-field">
+                  <input type="email" name="" id="" placeholder="youremail@email.com">
+                </div>
+              </div>
+              <div class="message-area">
+                <div class="message-text">
+                  <span>How can i help you</span>
+                </div>
+                <div class="message-input-field">
+                  <textarea name="" id=""></textarea>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="submit-area">
+              <div class="checkbox-area">Ive read the stuff and agree</div>
+              <div><button>Say What?</button></div>
+            </div>
+
+         
+        </div>
         </div>
       </section>
 

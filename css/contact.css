@@ -1,0 +1,78 @@
+.contact-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #1C1C1C;
+    padding-top: 144px;
+}
+
+.contact-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contact-title{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 176px;
+    gap: 20px;
+}
+
+.contact-kicker{
+font-family: Karla;
+font-weight: 500;
+font-style: Medium;
+font-size: 24px;
+line-height: 100%;
+letter-spacing: 0%;
+color: var(--text-color-cyan);
+}
+
+.contact-headline{
+    font-family: Fira Code;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -3%;
+    color: var(--text-color-cyan);
+}
+.contact-form-container{
+    max-width: 616px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.name-text,
+.mail-text,
+.message-text{
+    font-family: Fira Code;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: var(--text-color-cyan);
+}
+
+.name-area,
+.mail-area,
+.message-area{
+    border-top: solid 1px var(--border-color-cyan);
+    border-bottom: solid 1px var(--border-color-cyan);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.name-input-field input,
+.mail-input-field input,
+.message-input-field textarea{
+    background: none;
+    border: unset;
+}

@@ -92,6 +92,7 @@
 .feedback-card-left,
 .feedback-card-right{
     opacity: 0.72;
+    cursor: pointer;
 }
 
 .feedback-card-far-left,

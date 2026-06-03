@@ -5,14 +5,14 @@
       commentEn: 'Working with Khang on our group project was a complete success. The coding quality of his contributions was outstanding, and the collaboration was always pleasant and productive. But what makes Khang truly special is his personality: I found in him not only an excellent partner but also a friend. Khang is a great asset to any team, both technically and personally.',
       relation: 'Teampartner'
     },{
-      name: 'Nawied Syed',
-      commentDe: 'Mit Khang habe ich im Projekt gut zusammenarbeiten können. Er hat seine Aufgaben termingerecht erledigt und sich in technische Abstimmungen sachlich eingebracht.',
-      commentEn: 'I was able to work well with Khang on the project. He completed his tasks on time and contributed constructively to technical discussions..',
-      relation: 'Teampartner'
-    },{
       name: 'Michele Korfmacher',
       commentDe: 'Khang zeigte während unserer gemeinsamen Projektarbeit eine hohe Lernbereitschaft und großes Interesse an neuen Technologien. Mit seinem schnellen Verständnis für technische Zusammenhänge und seiner Fähigkeit, pragmatische Lösungen zu finden, trug er maßgeblich zum Fortschritt unseres Projekts bei. Besonders positiv blieb mir seine ausgeprägte Teamfähigkeit in Erinnerung.',
       commentEn: 'During our joint project work, Khang demonstrated a strong willingness to learn and a keen interest in new technologies. His quick grasp of technical concepts and his ability to find pragmatic solutions made a significant contribution to the projects progress. I particularly remember his excellent teamwork skills.',
+      relation: 'Teampartner'
+    },{
+      name: 'Nawied Syed',
+      commentDe: 'Mit Khang habe ich im Projekt gut zusammenarbeiten können. Er hat seine Aufgaben termingerecht erledigt und sich in technische Abstimmungen sachlich eingebracht.',
+      commentEn: 'I was able to work well with Khang on the project. He completed his tasks on time and contributed constructively to technical discussions..',
       relation: 'Teampartner'
     }
   ]
@@ -21,7 +21,8 @@
   const feedbackTransitionDuration = 350;
   const feedbackState = {
     activeIndex: 0,
-    isAnimating: false
+    isAnimating: false,
+    isInitialized: false
   };
 
   let feedbackRef;
@@ -29,7 +30,12 @@
 
   document.addEventListener('DOMContentLoaded', initFeedbackSlider);
 
+
   function initFeedbackSlider() {
+    if (feedbackState.isInitialized) {
+      return;
+    }
+
     feedbackRef = document.getElementById('feedbackCard');
     dotsRef = document.getElementById('feedbackDots');
 
@@ -37,15 +43,22 @@
       return;
     }
 
-    document.getElementById('feedbackPrevious')?.addEventListener('click', () => updateActiveFeedback(feedbackState.activeIndex - 1));
-    document.getElementById('feedbackNext')?.addEventListener('click', () => updateActiveFeedback(feedbackState.activeIndex + 1));
     window.addEventListener('resize', () => {
       if (!feedbackState.isAnimating) {
         positionFeedbackTrack(2);
       }
     });
 
+    feedbackState.isInitialized = true;
     renderFeedbackSlider();
+  }
+
+  function showPreviousFeedback() {
+    updateActiveFeedback(feedbackState.activeIndex - 1);
+  }
+
+  function showNextFeedback() {
+    updateActiveFeedback(feedbackState.activeIndex + 1);
   }
 
   function updateActiveFeedback(nextIndex) {
@@ -90,22 +103,10 @@
 
   function createFeedbackCard(offset, slotIndex, focusSlot) {
     const feedback = feedbacks[getLoopedIndex(feedbackState.activeIndex + offset)];
+    const positionClass = getFeedbackCardPosition(slotIndex, focusSlot);
+    const clickHandler = getFeedbackCardClickHandler(positionClass);
 
-    return `
-      <article class="feedback-card ${getFeedbackCardPosition(slotIndex, focusSlot)}" data-feedback-slot="${slotIndex}">
-        <div class="feedback-content">
-          <div class="feedback-text">
-            <span>${feedback.commentDe}</span>
-          </div>
-          <div class="feedback-author">
-            <div class="feedback-horizontal-line">
-              <hr>
-            </div>
-            <div class="feedback-author-name">${feedback.name} - ${feedback.relation}</div>
-          </div>
-        </div>
-      </article>
-    `;
+    return getFeedbackTemplate(feedback, positionClass, slotIndex, clickHandler);
   }
 
   function positionFeedbackTrack(targetSlot, shouldAnimate = false, duration = feedbackTransitionDuration) {
@@ -209,3 +210,16 @@
 
     return 'feedback-card-far-right';
   }
+
+  function getFeedbackCardClickHandler(positionClass) {
+    if (positionClass === 'feedback-card-left') {
+      return 'showPreviousFeedback()';
+    }
+
+    if (positionClass === 'feedback-card-right') {
+      return 'showNextFeedback()';
+    }
+
+    return '';
+  }
+

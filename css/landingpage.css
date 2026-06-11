@@ -35,6 +35,7 @@
 
 .navbar-left a{
     color: #ffffff;
+    font-size: 2.0rem;
 }
 
 .navbar-right{
@@ -55,14 +56,14 @@
 
 .job-title{
     font-family: fira code;
-    font-size: 40px;
+    font-size: 4rem;
     margin: 0;
     color: var(--landingpage-text-color-white);
 }
 
 .name-title{
     font-family: karla;
-    font-size: 128px;
+    font-size: 12.8rem;
     margin: 0;
     color: var(--landingpage-text-color-white);
 }
@@ -79,7 +80,7 @@
     color: var(--text-color-white);
     border-radius: 100px;
     border: solid 1px var(--text-color-white);
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 120%;
     height: 48px;
     display: flex;
@@ -117,7 +118,7 @@
 }
 
 .scroll-down-icon{
-    font-size: 16px;
+    font-size: 1.6rem;
     color: #ffffff;
     border: unset;
     background-color: unset;
@@ -161,7 +162,7 @@
     transform: rotate(180deg);
     color: #ffffff;
     font-family: karla;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 400;
 }
 

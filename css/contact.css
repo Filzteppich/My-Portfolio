@@ -12,6 +12,12 @@
     justify-content: space-between;
 }
 
+.contact-text-container{
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+}
+
 .contact-title{
     display:flex;
     flex-direction: column;
@@ -39,6 +45,47 @@ color: var(--text-color-cyan);
     letter-spacing: -3%;
     color: var(--text-color-cyan);
 }
+
+.subtext-headline{
+font-family: Fira Code;
+font-weight: 700;
+font-style: Bold;
+font-size: 2.4rem;
+line-height: 120%;
+letter-spacing: 0%;
+color: var(--text-color-cyan);
+}
+
+.contact-subtext{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.subtext-text{
+font-family: Karla;
+font-weight: 400;
+font-style: Regular;
+font-size: 1.6rem;
+line-height: 120%;
+letter-spacing: 0%;
+color: var(--text-color-white);
+}
+
+.subtext-text p{
+    margin: 0 0 16px 0;
+}
+
+.subtext-text span{
+font-weight: 700;
+font-style: Bold;
+}
+
+.tc-cyan{
+    color: var(--text-color-cyan);
+}
+
+
 .contact-form-container{
     max-width: 616px;
     width: 100%;
@@ -67,7 +114,7 @@ color: var(--text-color-cyan);
     padding: 32px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
 }
 
 .name-input-field input,
@@ -75,4 +122,127 @@ color: var(--text-color-cyan);
 .message-input-field textarea{
     background: none;
     border: unset;
+    outline: none;
+    color: var(--text-color-white);
+    font-family: Karla;
+    font-size: 18px;
+    line-height: 120%;
+    
+}
+
+.message-input-field textarea{
+    width: 100%;
+    height: 22px;
+    min-height: 22px;
+    max-width: 552px;
+    padding: 0;
+    resize: none;
+}
+
+
+
+.name-input-field input::placeholder,
+.mail-input-field input::placeholder,
+.message-input-field textarea::placeholder{
+    font-family: Karla;
+    font-style: Regular;
+    font-size: 18px;
+    color: #FFFFFFCC;
+}
+
+.submit-area{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.checkbox-area{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-area label{
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.checkbox-area input[type="checkbox"]{
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+}
+
+.checkbox-area label::before{
+    content: '';
+    margin-right: .5em;
+    width: 18px;
+    height: 18px;
+    border-radius: .15em;
+    border: 2px solid var(--border-color-cyan);
+    flex-shrink: 0;
+}
+
+.checkbox-area label::after{
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(57 220 210 / 0.3);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.checkbox-area label:hover::after,
+.checkbox-area input[type="checkbox"]:hover + label::after{
+    opacity: 1;
+}
+
+.checkbox-area input[type="checkbox"]:checked + label::before{
+    content: '\002714';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--border-color-cyan);
+}
+
+.checkbox-area label{
+    font-family: Karla;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 1.5rem;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: var(--text-color-white);
+}
+
+.checkbox-area .checkbox-label-text{
+    flex: 1;
+}
+
+.submit-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn button{
+    height: 4.8rem;
+    padding: 0 2.4rem;
+    font-family: Karla;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    border-radius: 100px;
+    background: none;
+    border: solid 1px #FFFFFF80;
+    color: #FFFFFFCC;
+    
 }

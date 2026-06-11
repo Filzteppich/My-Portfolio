@@ -321,9 +321,18 @@
               <span>Let's work <br> together</span>
             </div>
           </div>
+          <div class="contact-subtext">
+            <div class="subtext-headline">
+              <span>Got a Problem to solve?</span>
+            </div>
+            <div class="subtext-text">
+             <p>Text me and tell me what you need, I'll be glad to hear from you and your upcoming projects</p> 
+              <span>Need a Frontend Developer? <span class="tc-cyan">Let's talk!</span></span>
+            </div>
+          </div>
 
         </div>
-        <div class="contact-form-container">
+        <form class="contact-form-container" id="formContainer">
           
             <div class="input-fields">
               <div class="name-area">
@@ -331,7 +340,7 @@
                   <span>What's your name?</span>
                 </div>
                 <div class="name-input-field">
-                  <input type="text" placeholder="Your name goes here">
+                  <input required type="text" name="user_name" placeholder="Your name goes here">
                 </div>
               </div>
               <div class="mail-area">
@@ -339,7 +348,7 @@
                   <span>What's your email?</span>
                 </div>
                 <div class="mail-input-field">
-                  <input type="email" name="" id="" placeholder="youremail@email.com">
+                  <input required type="email" name="user_mail" id="" placeholder="youremail@email.com">
                 </div>
               </div>
               <div class="message-area">
@@ -347,22 +356,28 @@
                   <span>How can i help you</span>
                 </div>
                 <div class="message-input-field">
-                  <textarea name="" id=""></textarea>
+                  <textarea required onkeyup="textAreaAdjust(this)" style="overflow:hidden" name="user_message" id="" placeholder="Hey Khang, i'm interested in"></textarea>
                 </div>
               </div>
 
             </div>
 
             <div class="submit-area">
-              <div class="checkbox-area">Ive read the stuff and agree</div>
-              <div><button>Say What?</button></div>
+              <div class="checkbox-area">
+                <input type="checkbox" name="privacy-policy" id="privacyPolicy">
+                <label for="privacyPolicy"><span class="checkbox-label-text">I've read the <span class="tc-cyan">privacy policy</span> and agree to the processing of my data as outlined</span></label>
+              </div>
+              <div class="submit-btn"><button onclick="sendNewMessage()" type="submit">Say Holla?</button></div>
             </div>
 
          
-        </div>
+          </form>
         </div>
       </section>
+      <footer>
 
+        
+      </footer>
       
 
       
